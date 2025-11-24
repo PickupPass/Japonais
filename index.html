@@ -22,7 +22,7 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
             background: white;
             border-radius: 20px;
@@ -63,125 +63,167 @@
         }
 
         .step-container {
-            min-height: 350px;
+            min-height: 400px;
             padding: 20px 0;
         }
 
         .step-title {
-            font-size: 20px;
+            font-size: 22px;
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
 
-        .hiragana-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        .instruction {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .hiragana-list {
+            display: flex;
+            flex-wrap: wrap;
             gap: 15px;
             margin: 20px 0;
+            justify-content: center;
         }
 
-        .hiragana-card {
-            background: #f8f9fa;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .hiragana-char {
-            font-size: 36px;
+        .hiragana-item {
+            font-size: 48px;
             color: #333;
-            margin-bottom: 8px;
-        }
-
-        .romaji {
-            font-size: 16px;
-            color: #667eea;
-            font-weight: 600;
-        }
-
-        .option-button {
-            width: 100%;
-            padding: 18px;
-            margin: 10px 0;
-            font-size: 20px;
+            padding: 15px;
             background: #f8f9fa;
-            border: 2px solid #e0e0e0;
             border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            min-width: 80px;
             text-align: center;
         }
 
-        .option-button:active {
-            transform: scale(0.98);
+        .input-group {
+            margin: 25px 0;
         }
 
-        .option-button.selected {
-            background: #667eea;
-            color: white;
+        .input-label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .text-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: monospace;
+        }
+
+        .text-input:focus {
+            outline: none;
             border-color: #667eea;
         }
 
-        .option-button.correct {
-            background: #4caf50;
-            color: white;
-            border-color: #4caf50;
-        }
-
-        .option-button.incorrect {
-            background: #f44336;
-            color: white;
-            border-color: #f44336;
-        }
-
-        .question {
-            font-size: 18px;
-            color: #333;
-            margin: 20px 0;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            line-height: 1.6;
-        }
-
         .japanese-text {
-            font-size: 28px;
+            font-size: 32px;
             text-align: center;
-            margin: 20px 0;
+            margin: 25px 0;
             padding: 30px;
             background: #f8f9fa;
             border-radius: 12px;
             color: #333;
+            line-height: 1.8;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
         }
 
         .feedback {
-            padding: 15px;
-            margin: 15px 0;
+            padding: 20px;
+            margin: 20px 0;
             border-radius: 12px;
-            text-align: center;
-            font-weight: 600;
             display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.info {
+            background: #e3f2fd;
+            color: #1565c0;
+            border-left: 4px solid #1565c0;
         }
 
         .feedback.success {
             background: #c8e6c9;
             color: #2e7d32;
-            display: block;
+            border-left: 4px solid #2e7d32;
         }
 
-        .feedback.error {
-            background: #ffcdd2;
-            color: #c62828;
-            display: block;
+        .feedback.warning {
+            background: #fff3cd;
+            color: #856404;
+            border-left: 4px solid #856404;
         }
 
-        .button-group {
+        .correction-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .correction-item strong {
+            color: #667eea;
+            font-size: 18px;
+        }
+
+        .astuce {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .astuce-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .btn-group {
             display: flex;
             gap: 10px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .btn {
@@ -210,29 +252,9 @@
             color: #333;
         }
 
-        .btn-secondary:active {
-            background: #d0d0d0;
-            transform: scale(0.98);
-        }
-
         .btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
-        }
-
-        .score-display {
-            text-align: center;
-            font-size: 18px;
-            color: #667eea;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-
-        .instruction {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
-            font-style: italic;
         }
 
         .lesson-selector {
@@ -258,10 +280,6 @@
             color: white;
         }
 
-        .lesson-btn:active {
-            transform: scale(0.95);
-        }
-
         @media (max-width: 480px) {
             .container {
                 padding: 20px;
@@ -271,13 +289,13 @@
                 font-size: 20px;
             }
 
-            .hiragana-grid {
-                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-                gap: 10px;
+            .hiragana-item {
+                font-size: 36px;
+                min-width: 60px;
             }
 
-            .hiragana-char {
-                font-size: 28px;
+            .japanese-text {
+                font-size: 24px;
             }
         }
     </style>
@@ -288,7 +306,7 @@
 
         <div class="lesson-selector" id="lessonSelector"></div>
 
-        <div class="lesson-title" id="lessonTitle">Leçon 1 : Voyelles + K</div>
+        <div class="lesson-title" id="lessonTitle"></div>
 
         <div class="progress-bar">
             <div class="progress-fill" id="progressBar"></div>
@@ -296,13 +314,9 @@
 
         <div class="step-container" id="stepContainer"></div>
 
-        <div class="feedback" id="feedback"></div>
-
-        <div class="button-group">
+        <div class="btn-group">
             <button class="btn btn-primary" id="nextBtn">Suivant</button>
         </div>
-
-        <div class="score-display" id="scoreDisplay">Score : 0/10</div>
     </div>
 
     <script>
@@ -325,97 +339,105 @@
                 ],
                 steps: [
                     {
-                        type: 'recognition',
-                        title: 'Étape 1 : Reconnaissance',
-                        instruction: 'Voici les hiragana que nous allons apprendre.',
-                        autoNext: true
+                        type: 'quick_test',
+                        title: '🔵 Petit test de lecture (rapide)',
+                        instruction: 'Lis les suivants (pas grave si tu ne sais pas encore) et donne-moi <strong>ta lecture en alphabet (romaji)</strong> :',
+                        hiragana: ['あお', 'いえ', 'うえ', 'かお', 'こえ'],
+                        correct_romaji: ['ao', 'ie', 'ue', 'kao', 'koe'],
+                        corrections: [
+                            { hiragana: 'あお', romaji: 'ao', sens: '(bleu)' },
+                            { hiragana: 'いえ', romaji: 'ie', sens: '(maison)' },
+                            { hiragana: 'うえ', romaji: 'ue', sens: '(au-dessus)' },
+                            { hiragana: 'かお', romaji: 'kao', sens: '(visage)' },
+                            { hiragana: 'こえ', romaji: 'koe', sens: '(voix)' }
+                        ],
+                        astuces: [
+                            { title: 'いえ (ie)', text: 'ne se prononce pas "i-é" mais "i-é" très rapide → ié' },
+                            { title: 'あお (ao)', text: 'c\'est "bleu", mais sert aussi pour "vert" dans certains contextes (feux de signalisation par ex.). Tu le verras plus tard.' }
+                        ]
                     },
                     {
-                        type: 'classification',
-                        title: 'Étape 2 : Trouve l\'intrus',
-                        instruction: 'Un de ces caractères n\'appartient pas au même groupe.',
-                        question: 'Lequel est l\'intrus ?',
-                        options: ['あ', 'い', 'う', 'か'],
-                        correct: 'か',
-                        explanation: 'か (ka) est l\'intrus car c\'est le seul de la série K.'
+                        type: 'exercise_2',
+                        title: '🔴 Petit exercice 2 (niveau +1)',
+                        instruction: 'Lis ces trois mots :',
+                        words: ['えい', 'けい', 'うえ'],
+                        correct_romaji: ['ei', 'kei', 'ue'],
+                        note: 'Réponds <strong>seulement en romaji</strong> (comme tu as fait).',
+                        corrections: [
+                            { word: 'えい', romaji: 'ei', note: '(tu as juste 👍)' },
+                            { word: 'けい', romaji: 'kei', note: '(tu as mis "kaii" → il faut garder le son "é" → "ké")' },
+                            { word: 'うえ', romaji: 'ue', note: '(tu as mis "ie", mais l♪ n\'est pas là → c\'est la voyelle "e" qui suit う)' }
+                        ],
+                        astuces: [
+                            { title: 'け (ke) + い (i) → けい (kei)', text: '👉 on garde la voyelle de い !, donc kei, pas "kaï".' },
+                            { title: 'うえ (ue)', text: '👉 "u" (ou) + "é", donc oué (très rapide)' }
+                        ],
+                        dialogue: {
+                            title: '🎭 Mini lecture de phrase (sans traduction pour l\'instant)',
+                            text: 'あおい え',
+                            instruction: '👉 Donne-moi le romaji seulement.'
+                        }
                     },
                     {
-                        type: 'quiz',
-                        title: 'Étape 3 : Écriture mentale',
-                        instruction: 'Sélectionne le bon hiragana',
-                        question: 'Comment écris-tu "ki" en hiragana ?',
-                        options: ['き', 'か', 'く', 'け'],
-                        correct: 'き',
-                        explanation: 'き se prononce "ki".'
+                        type: 'dialogue_correction',
+                        title: '✅ Ta version (romaji corrigée)',
+                        dialogue_romaji: 'aoi e',
+                        dialogue_hiragana: 'あおい え',
+                        corrections: [
+                            { title: 'こんにちは → konnichiwa', points: ['Il y a deux N (ん + に).', 'On ne prononce pas "wa" mais ça s\'écrit わ.'] },
+                            { title: 'おなまえは → onamae wa?', points: ['ça veut dire : Comment t\'appelles-tu ?', 'Tu avais lu "ewa ?" → tu as confondu le お/え.'] },
+                            { title: 'よろしく → yoroshiku', points: ['Tu as mis "shiku" → il manquait "yoro".'] }
+                        ],
+                        note: 'Yoroshiku veut dire "Enchanté / je compte sur toi / ravi de te rencontrer" (selon le contexte).'
                     },
                     {
-                        type: 'reading',
-                        title: 'Étape 4 : Lecture',
-                        instruction: 'Lis ce mot et devine sa signification',
-                        text: 'あき',
-                        question: 'Que signifie ce mot ?',
-                        options: ['Automne', 'Printemps', 'Été', 'Hiver'],
-                        correct: 'Automne',
-                        explanation: 'あき (aki) signifie "automne".'
+                        type: 'recap_table',
+                        title: '📊 Tableau récapitulatif Leçon 1',
+                        instruction: 'Voici tous les hiragana de la Leçon 1 avec leurs particularités :',
+                        table: [
+                            { hiragana: 'あ', romaji: 'a', note: 'normal' },
+                            { hiragana: 'い', romaji: 'i', note: 'normal' },
+                            { hiragana: 'う', romaji: 'u', note: 'normal' },
+                            { hiragana: 'え', romaji: 'e', note: 'normal' },
+                            { hiragana: 'お', romaji: 'o', note: 'normal' },
+                            { hiragana: 'か', romaji: 'ka', note: 'normal' },
+                            { hiragana: 'き', romaji: 'ki', note: 'normal' },
+                            { hiragana: 'く', romaji: 'ku', note: 'normal' },
+                            { hiragana: 'け', romaji: 'ke', note: 'normal' },
+                            { hiragana: 'こ', romaji: 'ko', note: 'normal' }
+                        ],
+                        note: 'Pas d\'exceptions pour cette leçon ! 😊'
                     },
                     {
-                        type: 'dialogue',
-                        title: 'Étape 5 : Mini-texte',
-                        instruction: 'Lis ce petit texte',
-                        text: 'あおい うみ\nあかい かお',
-                        translation: 'Une mer bleue (aoi umi)\nUn visage rouge (akai kao)',
-                        question: 'Combien de couleurs sont mentionnées ?',
-                        options: ['1', '2', '3', '4'],
-                        correct: '2',
-                        explanation: 'あおい (bleu) et あかい (rouge) = 2 couleurs.'
+                        type: 'vocabulary',
+                        title: '💡 Mini vocabulaire utile (en lecture)',
+                        instruction: 'Je te donne seulement les mots qu\'on peut lire grâce à ce que tu connais déjà.<br>📘 Pas de traduction à mémoriser maintenant, juste la lecture.',
+                        words: [
+                            { hiragana: 'あき', romaji: 'aki', sens: 'automne' },
+                            { hiragana: 'いえ', romaji: 'ie', sens: 'maison' },
+                            { hiragana: 'うえ', romaji: 'ue', sens: 'au-dessus' },
+                            { hiragana: 'かお', romaji: 'kao', sens: 'visage' },
+                            { hiragana: 'こえ', romaji: 'koe', sens: 'voix' },
+                            { hiragana: 'かぎ', romaji: 'kagi', sens: 'clé' }
+                        ]
                     },
                     {
-                        type: 'translation',
-                        title: 'Étape 6 : Traduction',
-                        instruction: 'Trouve la bonne traduction',
-                        question: 'Comment dit-on "eau" en japonais ?',
-                        text: '(ue = eau courante)',
-                        options: ['うえ', 'あい', 'いえ', 'おい'],
-                        correct: 'うえ',
-                        explanation: 'うえ (ue) signifie "eau courante".'
+                        type: 'mini_dialogue',
+                        title: '🗣️ Premier mini-dialogue (100% hiragana)',
+                        instruction: 'Lis tranquillement, puis tu me donnes :<br>• <strong>le romaji</strong><br>• puis, si tu peux, <strong>la traduction</strong>',
+                        dialogue: [
+                            { speaker: 'A:', text: 'こんにちは！' },
+                            { speaker: 'B:', text: 'こんにちは。おなまえは？' },
+                            { speaker: 'A:', text: 'さつきです。' },
+                            { speaker: 'B:', text: 'さつきさん、よろしく！' }
+                        ],
+                        note: '👉 Tu peux écrire juste le <strong>romaji</strong>, et si tu sais la signification tu la rajoutes.',
+                        encouragement: 'Je corrige tout ensuite 👍'
                     },
                     {
-                        type: 'quiz',
-                        title: 'Étape 7 : Sons similaires',
-                        instruction: 'Attention aux sons proches !',
-                        question: 'Lequel est "e" (et non "i") ?',
-                        options: ['え', 'い', 'お', 'あ'],
-                        correct: 'え',
-                        explanation: 'え se prononce "e", い se prononce "i".'
-                    },
-                    {
-                        type: 'reading',
-                        title: 'Étape 8 : Lecture',
-                        instruction: 'Lis ce mot',
-                        text: 'かお',
-                        question: 'Que signifie ce mot ?',
-                        options: ['Visage', 'Chat', 'Chien', 'Oiseau'],
-                        correct: 'Visage',
-                        explanation: 'かお (kao) signifie "visage".'
-                    },
-                    {
-                        type: 'translation',
-                        title: 'Étape 9 : Vocabulaire',
-                        instruction: 'Trouve la traduction',
-                        question: 'Comment dit-on "clé" ?',
-                        text: '(kagi = clé)',
-                        options: ['かぎ', 'かき', 'かこ', 'かけ'],
-                        correct: 'かぎ',
-                        explanation: 'かぎ (kagi) signifie "clé".'
-                    },
-                    {
-                        type: 'quiz',
-                        title: 'Étape 10 : Quiz final',
-                        instruction: 'Révision de la leçon',
-                        question: 'Quel hiragana se prononce "ko" ?',
-                        options: ['こ', 'か', 'く', 'き'],
-                        correct: 'こ',
-                        explanation: 'こ se prononce "ko".'
+                        type: 'final',
+                        title: '🎉 Leçon 1 terminée !',
+                        message: 'Bravo ! Tu connais maintenant les voyelles et la série K.<br><br>Tu peux passer à la <strong>Leçon 2 : S + T</strong> quand tu veux ! 🚀'
                     }
                 ]
             },
@@ -436,97 +458,78 @@
                 ],
                 steps: [
                     {
-                        type: 'recognition',
-                        title: 'Étape 1 : Reconnaissance',
-                        instruction: 'Découvre les séries S et T.',
-                        autoNext: true
+                        type: 'intro_table',
+                        title: '🟠 Leçon 2 : Hiragana (S + T)',
+                        instruction: 'On ajoute maintenant さ〜そ et た〜と.',
+                        tables: [
+                            {
+                                title: '🔵 Ligne S (comme "s") :',
+                                rows: [
+                                    { hiragana: 'さ', romaji: 'sa', note: 'normal' },
+                                    { hiragana: 'し', romaji: 'shi', note: 'pas si, mais <strong>shi</strong> (comme sushi 🍣)' },
+                                    { hiragana: 'す', romaji: 'su', note: 'normal' },
+                                    { hiragana: 'せ', romaji: 'se', note: 'normal' },
+                                    { hiragana: 'そ', romaji: 'so', note: 'normal' }
+                                ],
+                                note: '👉 し ≠ si, mais <strong>shi</strong> (à bien retenir maintenant !)'
+                            },
+                            {
+                                title: '🔵 Ligne T (comme "t") :',
+                                rows: [
+                                    { hiragana: 'た', romaji: 'ta', note: 'normal' },
+                                    { hiragana: 'ち', romaji: 'chi', note: 'pas ti, mais <strong>chi</strong>' },
+                                    { hiragana: 'つ', romaji: 'tsu', note: 'pas tu' },
+                                    { hiragana: 'て', romaji: 'te', note: 'normal' },
+                                    { hiragana: 'と', romaji: 'to', note: 'normal' }
+                                ],
+                                note: '🎀 Dis-toi : <em>la ligne T aime changer ses trois premiers sons</em>.'
+                            }
+                        ],
+                        exceptions: [
+                            'し → shi',
+                            'ち → chi',
+                            'つ → tsu'
+                        ]
                     },
                     {
-                        type: 'classification',
-                        title: 'Étape 2 : Trouve l\'intrus',
-                        instruction: 'Un caractère ne fait pas partie du groupe.',
-                        question: 'Lequel est l\'intrus ?',
-                        options: ['さ', 'し', 'す', 'た'],
-                        correct: 'た',
-                        explanation: 'た (ta) est de la série T, les autres sont de la série S.'
+                        type: 'quick_test',
+                        title: '✏️ Exercice rapide (lecture)',
+                        instruction: 'Lis en <strong>romaji</strong> :',
+                        hiragana: ['すし', 'たつ', 'ちいさい'],
+                        correct_romaji: ['sushi', 'tatsu', 'chiisai'],
+                        note: '👉 Réponds comme toujours en romaji.',
+                        next_instruction: 'Ensuite on fera :<br>• mini texte à lire + vocabulaire utile<br>• écriture correcte des 3 sons spéciaux (し / ち / つ)'
                     },
                     {
-                        type: 'quiz',
-                        title: 'Étape 3 : Écriture mentale',
-                        instruction: 'Sélectionne le bon hiragana',
-                        question: 'Comment écris-tu "chi" en hiragana ?',
-                        options: ['ち', 'し', 'つ', 'て'],
-                        correct: 'ち',
-                        explanation: 'ち se prononce "chi".'
+                        type: 'vocabulary',
+                        title: '💡 Mini vocabulaire utile (en lecture)',
+                        instruction: 'Je te donne seulement les mots qu\'on peut lire grâce à ce que tu connais déjà.',
+                        words: [
+                            { hiragana: 'すし', romaji: 'sushi', sens: 'sushi 🍣' },
+                            { hiragana: 'しそ', romaji: 'shiso', sens: 'herbe japonaise' },
+                            { hiragana: 'あし', romaji: 'ashi', sens: 'jambe / pied' },
+                            { hiragana: 'つき', romaji: 'tsuki', sens: 'lune 🌙' },
+                            { hiragana: 'ちか', romaji: 'chika', sens: 'sous-sol' },
+                            { hiragana: 'さか', romaji: 'saka', sens: 'pente' },
+                            { hiragana: 'て', romaji: 'te', sens: 'main ✋' },
+                            { hiragana: 'とき', romaji: 'toki', sens: 'temps / moment' }
+                        ]
                     },
                     {
-                        type: 'reading',
-                        title: 'Étape 4 : Lecture',
-                        instruction: 'Lis ce mot',
-                        text: 'すし',
-                        question: 'Que signifie ce mot ?',
-                        options: ['Sushi', 'Saké', 'Soupe', 'Thé'],
-                        correct: 'Sushi',
-                        explanation: 'すし (sushi) désigne le plat japonais.'
+                        type: 'mini_dialogue',
+                        title: '🗣️ Mini-dialogue',
+                        instruction: 'Lis tranquillement, puis tu me donnes le romaji :',
+                        dialogue: [
+                            { speaker: 'A:', text: 'すしが すき？' },
+                            { speaker: 'B:', text: 'うん、すき！' },
+                            { speaker: 'A:', text: 'ちかに いこう。' },
+                            { speaker: 'B:', text: 'いいね！' }
+                        ]
                     },
                     {
-                        type: 'dialogue',
-                        title: 'Étape 5 : Mini-texte',
-                        instruction: 'Lis cette phrase',
-                        text: 'ちいさい いえ',
-                        translation: 'Une petite maison (chiisai ie)',
-                        question: 'Que décrit cette phrase ?',
-                        options: ['Une maison', 'Un chat', 'Une voiture', 'Un arbre'],
-                        correct: 'Une maison',
-                        explanation: 'いえ (ie) signifie "maison".'
-                    },
-                    {
-                        type: 'translation',
-                        title: 'Étape 6 : Traduction',
-                        instruction: 'Trouve la bonne traduction',
-                        question: 'Comment dit-on "étoile" ?',
-                        text: '(hoshi = étoile)',
-                        options: ['ほし', 'そと', 'つき', 'たこ'],
-                        correct: 'ほし',
-                        explanation: 'ほし (hoshi) signifie "étoile".'
-                    },
-                    {
-                        type: 'quiz',
-                        title: 'Étape 7 : Sons proches',
-                        instruction: 'Distingue bien les sons',
-                        question: 'Lequel est "tsu" (et non "su") ?',
-                        options: ['つ', 'す', 'て', 'せ'],
-                        correct: 'つ',
-                        explanation: 'つ se prononce "tsu", す se prononce "su".'
-                    },
-                    {
-                        type: 'reading',
-                        title: 'Étape 8 : Lecture',
-                        instruction: 'Lis ce mot',
-                        text: 'そと',
-                        question: 'Que signifie ce mot ?',
-                        options: ['Dehors', 'Dedans', 'Ici', 'Là-bas'],
-                        correct: 'Dehors',
-                        explanation: 'そと (soto) signifie "dehors, extérieur".'
-                    },
-                    {
-                        type: 'translation',
-                        title: 'Étape 9 : Vocabulaire',
-                        instruction: 'Trouve la traduction',
-                        question: 'Comment dit-on "main" ?',
-                        text: '(te = main)',
-                        options: ['て', 'た', 'ち', 'と'],
-                        correct: 'て',
-                        explanation: 'て (te) signifie "main".'
-                    },
-                    {
-                        type: 'quiz',
-                        title: 'Étape 10 : Quiz final',
-                        instruction: 'Révision de la leçon',
-                        question: 'Quel hiragana se prononce "sa" ?',
-                        options: ['さ', 'し', 'す', 'せ'],
-                        correct: 'さ',
-                        explanation: 'さ se prononce "sa".'
+                        type: 'final',
+                        title: '🎉 Leçon 2 terminée !',
+                        message: 'Super ! Tu maîtrises maintenant les séries S et T.<br><br>Direction la <strong>Leçon 3 : N + H</strong> ! 🚀'
                     }
                 ]
             },
@@ -547,97 +550,70 @@
                 ],
                 steps: [
                     {
-                        type: 'recognition',
-                        title: 'Étape 1 : Reconnaissance',
-                        instruction: 'Découvre les séries N et H.',
-                        autoNext: true
+                        type: 'intro_table',
+                        title: '🟢 Leçon 3 : Hiragana (N + H)',
+                        instruction: 'Dernière ligne : な〜の et は〜ほ.',
+                        tables: [
+                            {
+                                title: '🔵 Ligne N (comme "n") :',
+                                rows: [
+                                    { hiragana: 'な', romaji: 'na', note: 'normal' },
+                                    { hiragana: 'に', romaji: 'ni', note: 'normal' },
+                                    { hiragana: 'ぬ', romaji: 'nu', note: 'normal' },
+                                    { hiragana: 'ね', romaji: 'ne', note: 'normal' },
+                                    { hiragana: 'の', romaji: 'no', note: 'normal' }
+                                ]
+                            },
+                            {
+                                title: '🔵 Ligne H (comme "h") :',
+                                rows: [
+                                    { hiragana: 'は', romaji: 'ha', note: 'normal' },
+                                    { hiragana: 'ひ', romaji: 'hi', note: 'normal' },
+                                    { hiragana: 'ふ', romaji: 'fu', note: 'pas hu' },
+                                    { hiragana: 'へ', romaji: 'he', note: 'normal' },
+                                    { hiragana: 'ほ', romaji: 'ho', note: 'normal' }
+                                ],
+                                note: '👉 ふ se prononce "fu", pas "hu"'
+                            }
+                        ],
+                        exceptions: [
+                            'ふ → fu (et non "hu")'
+                        ]
                     },
                     {
-                        type: 'classification',
-                        title: 'Étape 2 : Trouve l\'intrus',
-                        instruction: 'Quel caractère est différent ?',
-                        question: 'Lequel est l\'intrus ?',
-                        options: ['な', 'に', 'ぬ', 'は'],
-                        correct: 'は',
-                        explanation: 'は (ha) est de la série H, les autres sont de la série N.'
+                        type: 'quick_test',
+                        title: '✏️ Exercice rapide',
+                        instruction: 'Lis en romaji :',
+                        hiragana: ['はな', 'ねこ', 'ふね'],
+                        correct_romaji: ['hana', 'neko', 'fune']
                     },
                     {
-                        type: 'quiz',
-                        title: 'Étape 3 : Écriture mentale',
-                        instruction: 'Sélectionne le bon hiragana',
-                        question: 'Comment écris-tu "fu" en hiragana ?',
-                        options: ['ふ', 'は', 'ひ', 'へ'],
-                        correct: 'ふ',
-                        explanation: 'ふ se prononce "fu".'
+                        type: 'vocabulary',
+                        title: '💡 Vocabulaire utile',
+                        words: [
+                            { hiragana: 'はな', romaji: 'hana', sens: 'fleur / nez' },
+                            { hiragana: 'ねこ', romaji: 'neko', sens: 'chat 🐱' },
+                            { hiragana: 'ふね', romaji: 'fune', sens: 'bateau' },
+                            { hiragana: 'ほん', romaji: 'hon', sens: 'livre' },
+                            { hiragana: 'なつ', romaji: 'natsu', sens: 'été' },
+                            { hiragana: 'にく', romaji: 'niku', sens: 'viande' }
+                        ]
                     },
                     {
-                        type: 'reading',
-                        title: 'Étape 4 : Lecture',
-                        instruction: 'Lis ce mot',
-                        text: 'はな',
-                        question: 'Que signifie ce mot ?',
-                        options: ['Fleur', 'Nez', 'Les deux', 'Aucun'],
-                        correct: 'Les deux',
-                        explanation: 'はな (hana) signifie "fleur" et "nez" selon le contexte.'
+                        type: 'mini_dialogue',
+                        title: '🗣️ Mini-dialogue final',
+                        instruction: 'Lis et donne le romaji :',
+                        dialogue: [
+                            { speaker: 'A:', text: 'ねこが すき？' },
+                            { speaker: 'B:', text: 'うん、ねこは かわいい！' },
+                            { speaker: 'A:', text: 'なまえは？' },
+                            { speaker: 'B:', text: 'はな。' }
+                        ]
                     },
                     {
-                        type: 'dialogue',
-                        title: 'Étape 5 : Mini-texte',
-                        instruction: 'Lis cette phrase',
-                        text: 'ねこ の なまえ は なな',
-                        translation: 'Le nom du chat est Nana (neko no namae ha nana)',
-                        question: 'De quoi parle cette phrase ?',
-                        options: ['D\'un chat', 'D\'un chien', 'D\'un oiseau', 'D\'un poisson'],
-                        correct: 'D\'un chat',
-                        explanation: 'ねこ (neko) signifie "chat".'
-                    },
-                    {
-                        type: 'translation',
-                        title: 'Étape 6 : Traduction',
-                        instruction: 'Trouve la bonne traduction',
-                        question: 'Comment dit-on "feu" ?',
-                        text: '(hi = feu)',
-                        options: ['ひ', 'へ', 'ほ', 'は'],
-                        correct: 'ひ',
-                        explanation: 'ひ (hi) signifie "feu".'
-                    },
-                    {
-                        type: 'quiz',
-                        title: 'Étape 7 : Sons proches',
-                        instruction: 'Attention aux sons',
-                        question: 'Lequel est "ne" (et non "nu") ?',
-                        options: ['ね', 'ぬ', 'に', 'の'],
-                        correct: 'ね',
-                        explanation: 'ね se prononce "ne", ぬ se prononce "nu".'
-                    },
-                    {
-                        type: 'reading',
-                        title: 'Étape 8 : Lecture',
-                        instruction: 'Lis ce mot',
-                        text: 'ほん',
-                        question: 'Que signifie ce mot ?',
-                        options: ['Livre', 'Stylo', 'Table', 'Chaise'],
-                        correct: 'Livre',
-                        explanation: 'ほん (hon) signifie "livre".'
-                    },
-                    {
-                        type: 'translation',
-                        title: 'Étape 9 : Vocabulaire',
-                        instruction: 'Trouve la traduction',
-                        question: 'Comment dit-on "corde" ?',
-                        text: '(nawa = corde)',
-                        options: ['なわ', 'はな', 'にわ', 'ねこ'],
-                        correct: 'なわ',
-                        explanation: 'なわ (nawa) signifie "corde".'
-                    },
-                    {
-                        type: 'quiz',
-                        title: 'Étape 10 : Quiz final',
-                        instruction: 'Révision de la leçon',
-                        question: 'Quel hiragana se prononce "ho" ?',
-                        options: ['ほ', 'は', 'ひ', 'へ'],
-                        correct: 'ほ',
-                        explanation: 'ほ se prononce "ho".'
+                        type: 'final',
+                        title: '🎉 Félicitations !',
+                        message: 'Tu as terminé les 3 leçons !<br><br>Tu connais maintenant <strong>30 hiragana</strong> ! 🎊<br><br>Continue à pratiquer en relisant les dialogues. 📚'
                     }
                 ]
             }
@@ -646,328 +622,396 @@
         // ============= VARIABLES GLOBALES =============
         let currentLessonIndex = 0;
         let currentStep = 0;
-        let score = 0;
-        let answered = false;
-        let userAnswer = null;
-        let wrongAnswers = [];
-        let isReviewing = false;
+        let userAnswers = {};
 
-        // ============= ÉLÉMENTS DOM =============
+        // Éléments DOM
         const stepContainer = document.getElementById('stepContainer');
-        const feedback = document.getElementById('feedback');
         const nextBtn = document.getElementById('nextBtn');
-        const scoreDisplay = document.getElementById('scoreDisplay');
         const progressBar = document.getElementById('progressBar');
         const lessonTitle = document.getElementById('lessonTitle');
         const lessonSelector = document.getElementById('lessonSelector');
 
-        // ============= FONCTIONS UTILITAIRES =============
-
-        // Mélanger un tableau (Fisher-Yates shuffle)
-        function shuffleArray(array) {
-            const newArray = [...array];
-            for (let i = newArray.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-            }
-            return newArray;
-        }
-
-        // Obtenir la leçon actuelle
-        function getCurrentLesson() {
-            return lessons[currentLessonIndex];
-        }
-
         // ============= INITIALISATION =============
         function init() {
             renderLessonSelector();
-            renderStep();
-            updateProgress();
+            loadLesson(0);
         }
 
-        // Rendu du sélecteur de leçons
         function renderLessonSelector() {
             lessonSelector.innerHTML = '';
             lessons.forEach((lesson, index) => {
                 const btn = document.createElement('button');
                 btn.className = 'lesson-btn' + (index === currentLessonIndex ? ' active' : '');
-                btn.textContent = `L${lesson.id}`;
-                btn.onclick = () => switchLesson(index);
+                btn.textContent = `Leçon ${lesson.id}`;
+                btn.onclick = () => loadLesson(index);
                 lessonSelector.appendChild(btn);
             });
         }
 
-        // Changer de leçon
-        function switchLesson(index) {
+        function loadLesson(index) {
             currentLessonIndex = index;
             currentStep = 0;
-            score = 0;
-            wrongAnswers = [];
-            isReviewing = false;
-            answered = false;
-
-            const lesson = getCurrentLesson();
+            userAnswers = {};
+            const lesson = lessons[currentLessonIndex];
             lessonTitle.textContent = lesson.title;
-            scoreDisplay.textContent = `Score : 0/${lesson.steps.length}`;
-
             renderLessonSelector();
             renderStep();
             updateProgress();
         }
 
-        // Mise à jour de la barre de progression
         function updateProgress() {
-            const lesson = getCurrentLesson();
+            const lesson = lessons[currentLessonIndex];
             const progress = ((currentStep + 1) / lesson.steps.length) * 100;
             progressBar.style.width = progress + '%';
         }
 
         // ============= RENDU DES ÉTAPES =============
         function renderStep() {
-            const lesson = getCurrentLesson();
+            const lesson = lessons[currentLessonIndex];
             const step = lesson.steps[currentStep];
             stepContainer.innerHTML = '';
-            feedback.style.display = 'none';
-            feedback.className = 'feedback';
-            answered = false;
-            userAnswer = null;
 
-            // Titre de l'étape
             const title = document.createElement('div');
             title.className = 'step-title';
             title.textContent = step.title;
             stepContainer.appendChild(title);
 
-            // Instruction
-            const instruction = document.createElement('div');
-            instruction.className = 'instruction';
-            instruction.textContent = step.instruction;
-            stepContainer.appendChild(instruction);
+            if (step.instruction) {
+                const instruction = document.createElement('div');
+                instruction.className = 'instruction';
+                instruction.innerHTML = step.instruction;
+                stepContainer.appendChild(instruction);
+            }
 
-            // Rendu selon le type d'étape
             switch (step.type) {
-                case 'recognition':
-                    renderRecognition(lesson.hiragana);
+                case 'quick_test':
+                    renderQuickTest(step);
                     break;
-                default:
-                    renderQuizStyle(step);
+                case 'exercise_2':
+                    renderExercise2(step);
+                    break;
+                case 'dialogue_correction':
+                    renderDialogueCorrection(step);
+                    break;
+                case 'recap_table':
+                case 'intro_table':
+                    renderTable(step);
+                    break;
+                case 'vocabulary':
+                    renderVocabulary(step);
+                    break;
+                case 'mini_dialogue':
+                    renderMiniDialogue(step);
+                    break;
+                case 'final':
+                    renderFinal(step);
                     break;
             }
-
-            nextBtn.disabled = !step.autoNext;
         }
 
-        // Étape 1 : Reconnaissance
-        function renderRecognition(hiraganaList) {
-            const grid = document.createElement('div');
-            grid.className = 'hiragana-grid';
-
-            hiraganaList.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'hiragana-card';
-                card.innerHTML = `
-                    <div class="hiragana-char">${item.char}</div>
-                    <div class="romaji">${item.romaji}</div>
-                `;
-                grid.appendChild(card);
+        function renderQuickTest(step) {
+            const list = document.createElement('div');
+            list.className = 'hiragana-list';
+            step.hiragana.forEach(h => {
+                const item = document.createElement('div');
+                item.className = 'hiragana-item';
+                item.textContent = h;
+                list.appendChild(item);
             });
+            stepContainer.appendChild(list);
 
-            stepContainer.appendChild(grid);
-        }
+            const feedback = document.createElement('div');
+            feedback.className = 'feedback info show';
+            feedback.innerHTML = '👉 Tu réponds juste en romaji (ex: "kao").<br>Je corrige, je t\'explique, puis je t\'envoie un petit texte ultra simple à lire ! 💪🏻🇯🇵';
+            stepContainer.appendChild(feedback);
 
-        // Rendu style quiz (tous les autres types)
-        function renderQuizStyle(step) {
-            // Texte japonais
-            if (step.text) {
-                const textDiv = document.createElement('div');
-                textDiv.className = 'japanese-text';
-                textDiv.innerHTML = step.text.replace(/\n/g, '<br>');
-                stepContainer.appendChild(textDiv);
-            }
+            if (step.corrections) {
+                const correctionTitle = document.createElement('div');
+                correctionTitle.className = 'step-title';
+                correctionTitle.style.marginTop = '30px';
+                correctionTitle.textContent = '✅ Correction';
+                stepContainer.appendChild(correctionTitle);
 
-            // Traduction
-            if (step.translation) {
-                const translation = document.createElement('div');
-                translation.className = 'instruction';
-                translation.innerHTML = step.translation.replace(/\n/g, '<br>');
-                translation.style.textAlign = 'center';
-                translation.style.marginTop = '10px';
-                stepContainer.appendChild(translation);
-            }
+                step.corrections.forEach(corr => {
+                    const corrItem = document.createElement('div');
+                    corrItem.className = 'correction-item';
+                    corrItem.innerHTML = `<strong>${corr.hiragana}</strong> → ${corr.romaji} ${corr.sens}`;
+                    stepContainer.appendChild(corrItem);
+                });
 
-            // Question
-            const questionDiv = document.createElement('div');
-            questionDiv.className = 'question';
-            questionDiv.textContent = step.question;
-            stepContainer.appendChild(questionDiv);
-
-            // MÉLANGER LES OPTIONS
-            const shuffledOptions = shuffleArray(step.options);
-
-            // Options
-            shuffledOptions.forEach(option => {
-                const btn = document.createElement('button');
-                btn.className = 'option-button';
-                btn.textContent = option;
-                btn.onclick = () => selectOption(btn, option, step.correct, step.explanation);
-                stepContainer.appendChild(btn);
-            });
-        }
-
-        // ============= LOGIQUE DE RÉPONSE =============
-        function selectOption(button, selected, correct, explanation) {
-            if (answered) return;
-
-            const allButtons = stepContainer.querySelectorAll('.option-button');
-            allButtons.forEach(btn => btn.classList.remove('selected'));
-
-            button.classList.add('selected');
-            userAnswer = selected;
-
-            checkAnswer(correct, explanation, button);
-        }
-
-        function checkAnswer(correct, explanation, button) {
-            if (answered) return;
-
-            const isCorrect = userAnswer === correct;
-
-            if (isCorrect) {
-                button.classList.add('correct');
-                score++;
-                showFeedback(true, 'Correct ! ' + explanation);
-            } else {
-                button.classList.add('incorrect');
-                if (!isReviewing) {
-                    wrongAnswers.push(currentStep);
+                if (step.astuces) {
+                    step.astuces.forEach(astuce => {
+                        const astuceDiv = document.createElement('div');
+                        astuceDiv.className = 'astuce';
+                        astuceDiv.innerHTML = `<div class="astuce-title">💡 ${astuce.title}</div><div>${astuce.text}</div>`;
+                        stepContainer.appendChild(astuceDiv);
+                    });
                 }
+            }
+        }
 
-                // Montrer la bonne réponse
-                const allButtons = stepContainer.querySelectorAll('.option-button');
-                allButtons.forEach(btn => {
-                    if (btn.textContent === correct) {
-                        btn.classList.add('correct');
+        function renderExercise2(step) {
+            const list = document.createElement('div');
+            list.className = 'hiragana-list';
+            step.words.forEach(w => {
+                const item = document.createElement('div');
+                item.className = 'hiragana-item';
+                item.textContent = w;
+                list.appendChild(item);
+            });
+            stepContainer.appendChild(list);
+
+            if (step.note) {
+                const note = document.createElement('div');
+                note.className = 'feedback info show';
+                note.innerHTML = step.note;
+                stepContainer.appendChild(note);
+            }
+
+            if (step.corrections) {
+                const corrTitle = document.createElement('div');
+                corrTitle.className = 'step-title';
+                corrTitle.style.marginTop = '30px';
+                corrTitle.textContent = '✅ Correction';
+                stepContainer.appendChild(corrTitle);
+
+                step.corrections.forEach(corr => {
+                    const corrItem = document.createElement('div');
+                    corrItem.className = 'correction-item';
+                    corrItem.innerHTML = `<strong>${corr.word}</strong> → ${corr.romaji} ${corr.note}`;
+                    stepContainer.appendChild(corrItem);
+                });
+
+                if (step.astuces) {
+                    step.astuces.forEach(astuce => {
+                        const astuceDiv = document.createElement('div');
+                        astuceDiv.className = 'astuce';
+                        astuceDiv.innerHTML = `<div class="astuce-title">💡 ${astuce.title}</div><div>${astuce.text}</div>`;
+                        stepContainer.appendChild(astuceDiv);
+                    });
+                }
+            }
+
+            if (step.dialogue) {
+                const dialogueTitle = document.createElement('div');
+                dialogueTitle.className = 'step-title';
+                dialogueTitle.style.marginTop = '30px';
+                dialogueTitle.textContent = step.dialogue.title;
+                stepContainer.appendChild(dialogueTitle);
+
+                const dialogueText = document.createElement('div');
+                dialogueText.className = 'japanese-text';
+                dialogueText.textContent = step.dialogue.text;
+                stepContainer.appendChild(dialogueText);
+
+                const dialogueInstr = document.createElement('div');
+                dialogueInstr.className = 'instruction';
+                dialogueInstr.innerHTML = step.dialogue.instruction;
+                stepContainer.appendChild(dialogueInstr);
+            }
+        }
+
+        function renderDialogueCorrection(step) {
+            const corrTitle = document.createElement('div');
+            corrTitle.className = 'step-title';
+            corrTitle.textContent = '📝 Ta version (romaji corrigée)';
+            stepContainer.appendChild(corrTitle);
+
+            const userVersion = document.createElement('div');
+            userVersion.className = 'correction-item';
+            userVersion.innerHTML = `<strong>Romaji:</strong> ${step.dialogue_romaji}`;
+            stepContainer.appendChild(userVersion);
+
+            const corrections = document.createElement('div');
+            corrections.style.marginTop = '20px';
+            corrections.innerHTML = '<div class="step-title" style="font-size: 18px;">✅ Corrections importantes</div>';
+            stepContainer.appendChild(corrections);
+
+            step.corrections.forEach((corr, i) => {
+                const corrItem = document.createElement('div');
+                corrItem.className = 'correction-item';
+                let html = `<strong>${i + 1}. ${corr.title}</strong><ul>`;
+                corr.points.forEach(point => {
+                    html += `<li>${point}</li>`;
+                });
+                html += '</ul>';
+                corrItem.innerHTML = html;
+                stepContainer.appendChild(corrItem);
+            });
+
+            if (step.note) {
+                const note = document.createElement('div');
+                note.className = 'astuce';
+                note.innerHTML = `<div class="astuce-title">🎀 Note</div><div>${step.note}</div>`;
+                stepContainer.appendChild(note);
+            }
+        }
+
+        function renderTable(step) {
+            if (step.tables) {
+                step.tables.forEach(tableData => {
+                    const tableTitle = document.createElement('div');
+                    tableTitle.style.fontSize = '18px';
+                    tableTitle.style.fontWeight = '600';
+                    tableTitle.style.marginTop = '20px';
+                    tableTitle.style.marginBottom = '10px';
+                    tableTitle.innerHTML = tableData.title;
+                    stepContainer.appendChild(tableTitle);
+
+                    const table = document.createElement('table');
+                    table.innerHTML = `
+                        <thead>
+                            <tr>
+                                <th>Hiragana</th>
+                                <th>Prononciation</th>
+                                <th>Particularité</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tableData.rows.map(row => `
+                                <tr>
+                                    <td style="font-size: 24px;">${row.hiragana}</td>
+                                    <td><strong>${row.romaji}</strong></td>
+                                    <td>${row.note}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    `;
+                    stepContainer.appendChild(table);
+
+                    if (tableData.note) {
+                        const note = document.createElement('div');
+                        note.className = 'feedback warning show';
+                        note.innerHTML = tableData.note;
+                        stepContainer.appendChild(note);
                     }
                 });
 
-                showFeedback(false, explanation || 'La bonne réponse était : ' + correct);
+                if (step.exceptions) {
+                    const excTitle = document.createElement('div');
+                    excTitle.style.fontSize = '18px';
+                    excTitle.style.fontWeight = '600';
+                    excTitle.style.marginTop = '20px';
+                    excTitle.textContent = '📌 Donc les exceptions importantes :';
+                    stepContainer.appendChild(excTitle);
+
+                    const excList = document.createElement('ul');
+                    excList.style.marginLeft = '20px';
+                    excList.style.marginTop = '10px';
+                    step.exceptions.forEach(exc => {
+                        const li = document.createElement('li');
+                        li.innerHTML = exc;
+                        excList.appendChild(li);
+                    });
+                    stepContainer.appendChild(excList);
+                }
+            } else if (step.table) {
+                const table = document.createElement('table');
+                table.innerHTML = `
+                    <thead>
+                        <tr>
+                            <th>Hiragana</th>
+                            <th>Romaji</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${step.table.map(row => `
+                            <tr>
+                                <td style="font-size: 24px;">${row.hiragana}</td>
+                                <td><strong>${row.romaji}</strong></td>
+                                <td>${row.note}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                `;
+                stepContainer.appendChild(table);
+
+                if (step.note) {
+                    const note = document.createElement('div');
+                    note.className = 'feedback success show';
+                    note.innerHTML = step.note;
+                    stepContainer.appendChild(note);
+                }
+            }
+        }
+
+        function renderVocabulary(step) {
+            const table = document.createElement('table');
+            table.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Hiragana</th>
+                        <th>Romaji</th>
+                        <th>Sens</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${step.words.map(word => `
+                        <tr>
+                            <td style="font-size: 24px;">${word.hiragana}</td>
+                            <td><strong>${word.romaji}</strong></td>
+                            <td>${word.sens}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            `;
+            stepContainer.appendChild(table);
+
+            const note = document.createElement('div');
+            note.className = 'feedback info show';
+            note.innerHTML = '📌 On va les revoir plus tard dans un mini-texte.';
+            stepContainer.appendChild(note);
+        }
+
+        function renderMiniDialogue(step) {
+            const dialogueBox = document.createElement('div');
+            dialogueBox.className = 'japanese-text';
+            dialogueBox.style.textAlign = 'left';
+            dialogueBox.innerHTML = step.dialogue.map(line =>
+                `<div style="margin: 10px 0;"><strong>${line.speaker}</strong> ${line.text}</div>`
+            ).join('');
+            stepContainer.appendChild(dialogueBox);
+
+            if (step.note) {
+                const note = document.createElement('div');
+                note.className = 'feedback info show';
+                note.innerHTML = step.note;
+                stepContainer.appendChild(note);
             }
 
-            answered = true;
-            updateScore();
-            nextBtn.disabled = false;
+            if (step.encouragement) {
+                const enc = document.createElement('div');
+                enc.className = 'feedback success show';
+                enc.innerHTML = step.encouragement;
+                stepContainer.appendChild(enc);
+            }
         }
 
-        function showFeedback(success, message) {
-            feedback.textContent = message;
-            feedback.className = 'feedback ' + (success ? 'success' : 'error');
-        }
-
-        function updateScore() {
-            const lesson = getCurrentLesson();
-            scoreDisplay.textContent = `Score : ${score}/${lesson.steps.length}`;
+        function renderFinal(step) {
+            const message = document.createElement('div');
+            message.style.fontSize = '18px';
+            message.style.lineHeight = '1.8';
+            message.style.padding = '30px';
+            message.style.textAlign = 'center';
+            message.innerHTML = step.message;
+            stepContainer.appendChild(message);
         }
 
         // ============= NAVIGATION =============
         nextBtn.addEventListener('click', () => {
-            const lesson = getCurrentLesson();
-
+            const lesson = lessons[currentLessonIndex];
             if (currentStep < lesson.steps.length - 1) {
                 currentStep++;
                 renderStep();
                 updateProgress();
             } else {
-                showFinalScore();
+                // Fin de leçon
+                if (currentLessonIndex < lessons.length - 1) {
+                    loadLesson(currentLessonIndex + 1);
+                }
             }
         });
-
-        // ============= ÉCRANS FINAUX =============
-        function showFinalScore() {
-            if (wrongAnswers.length > 0 && !isReviewing) {
-                showReviewScreen();
-            } else {
-                const lesson = getCurrentLesson();
-                const isLastLesson = currentLessonIndex === lessons.length - 1;
-
-                stepContainer.innerHTML = `
-                    <div style="text-align: center; padding: 40px 0;">
-                        <div class="step-title">🎉 Leçon terminée !</div>
-                        <div style="font-size: 48px; color: #667eea; margin: 30px 0;">
-                            ${score}/${lesson.steps.length}
-                        </div>
-                        <div class="question">
-                            ${score === lesson.steps.length
-                                ? 'Parfait ! Tu maîtrises cette leçon !'
-                                : score >= 7
-                                ? 'Bien joué ! Continue à pratiquer.'
-                                : 'Continue tes efforts, tu vas y arriver !'}
-                        </div>
-                        <button class="btn btn-primary" onclick="restartLesson()" style="margin-top: 20px; width: 100%;">
-                            Recommencer la leçon
-                        </button>
-                        ${!isLastLesson ? `
-                            <button class="btn btn-secondary" onclick="nextLesson()" style="margin-top: 10px; width: 100%;">
-                                Leçon suivante →
-                            </button>
-                        ` : ''}
-                    </div>
-                `;
-                nextBtn.style.display = 'none';
-                feedback.style.display = 'none';
-            }
-        }
-
-        function showReviewScreen() {
-            stepContainer.innerHTML = `
-                <div style="text-align: center; padding: 30px 0;">
-                    <div class="step-title">📝 Révision des erreurs</div>
-                    <div class="question">
-                        Tu as fait ${wrongAnswers.length} erreur${wrongAnswers.length > 1 ? 's' : ''}.<br>
-                        Veux-tu les revoir ?
-                    </div>
-                    <button class="btn btn-primary" onclick="startReview()" style="margin-top: 20px; width: 100%;">
-                        Revoir mes erreurs
-                    </button>
-                    <button class="btn btn-secondary" onclick="skipReview()" style="margin-top: 10px; width: 100%;">
-                        Passer à la suite
-                    </button>
-                </div>
-            `;
-            nextBtn.style.display = 'none';
-            feedback.style.display = 'none';
-        }
-
-        function startReview() {
-            isReviewing = true;
-            currentStep = wrongAnswers[0];
-            wrongAnswers.shift();
-            nextBtn.style.display = 'block';
-            renderStep();
-            updateProgress();
-        }
-
-        function skipReview() {
-            wrongAnswers = [];
-            showFinalScore();
-        }
-
-        function restartLesson() {
-            currentStep = 0;
-            score = 0;
-            answered = false;
-            wrongAnswers = [];
-            isReviewing = false;
-            nextBtn.style.display = 'block';
-            updateScore();
-            renderStep();
-            updateProgress();
-        }
-
-        function nextLesson() {
-            if (currentLessonIndex < lessons.length - 1) {
-                switchLesson(currentLessonIndex + 1);
-            }
-        }
 
         // ============= DÉMARRAGE =============
         init();
