@@ -917,6 +917,9 @@
             feedback.className = 'feedback';
             answered = false;
 
+            // Ensure the next button is visible
+            nextBtn.style.display = '';
+
             const title = document.createElement('div');
             title.className = 'step-title';
             title.textContent = exercise.title || `Exercice ${currentExercise}`;
